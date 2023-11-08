@@ -1,0 +1,107 @@
+<!-- don :D -->
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Percent</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login {
+    min-width: 100vw;
+    min-height: 100vh;
+
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+form label {
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+form input {
+    margin:50px;
+    padding: 10px;
+    text-transform: capitalize;
+    border: 0;
+}
+input:focus {
+    color: black;
+    outline: hidden;
+    background-color: #9E9E9E;
+
+}
+.btn {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+    background-color: #F44336;
+    width: 200px;
+    color: white;
+}
+h4 {
+    /* margin-top: 150px; */
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    background-color: #F44336;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+
+}
+
+
+  </style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Heart disease prediction</h1>
+
+     
+    <form action="{{ url_for('predict')}}"method="post">
+      <label for="biking"> percent biking:</label>
+    	<input type="text" name="percent biking" placeholder="Percent population biking" required="required"  id="biking"/><br>
+      <label for="smoking">percent smoking:</label>
+        <input type="text" id="smoking" name="percent smoking" placeholder="Percent population smoking" required="required" /><p>
+
+        <button type="submit" class="btn">Predict</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4>
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
